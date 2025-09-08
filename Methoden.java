@@ -69,6 +69,33 @@ public class Methoden {
         }
     }
 
+    public static void distance(int x1, int y1, int x2, int y2) {
+        int x = 0;
+        x = x1 - x2;
+        int y = 0;
+        y = y1 - y2;
+        int distance0 = x * x + y * y;
+        int distance = (int) Math.sqrt(distance0);
+        System.out.println(distance);
+
+    }
+
+    public static void primfaktor(int zahl) {
+        System.out.println("Primfaktoren:");
+        int faktor = 2;
+        while (zahl != 1) {
+        if (zahl % faktor == 0){
+            System.out.print(faktor);
+            System.out.print(",");
+            zahl = zahl / faktor;
+        } else {
+            faktor = faktor + 1;
+        }
+
+        }
+
+    }
+
     public static void main(String[] args) {
         hours(1000);
         // System.out.println(hours(3));
@@ -77,8 +104,16 @@ public class Methoden {
         System.out.println();
 
         // Test-Code für Teilaufgabe b)
+
         System.out.println("Aufgabe b)");
         // TODO: Schreibe Testcode für die Aufgabe
-        System.out.println();
+        distance(25, 20, 20, 20);
+        distance(30, 30, 10, 10);
+        distance(1, 1, 3, 2);
+        distance(1000, 1205, 300, 742);
+        System.out.println("Aufgabe c)");
+        primfaktor(100);
+        primfaktor(725);
+        primfaktor(-50);
     }
 }

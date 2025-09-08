@@ -1,0 +1,24 @@
+
+    public static void hours(String[] args) {
+        int sec0 = 15
+        if (sec0 > 60){
+            int min0 = sec / 60
+            sec = sec0 % 60}
+        else{
+        if (sec0 > 9)
+        {system.out.println("00:00:"+ sec)}
+        else {system.out.println("00:00:0" + sec)}
+        if (min0 > 60){
+            int hours0 = min0 / 60
+            int min = min0 % 60}
+        else{
+        if (min > 9)
+        {system.out.println("00:"+min":"+ sec)}
+        else {system.out.println("00:0"+ min +":" + sec)}
+
+        if (hours0 > 9)
+        {system.out.println("0"+hours0":"+min":"+ sec)}
+        else {system.out.println(hours0 + ":"+ min + ":" + sec)}
+
+        }
+    }}

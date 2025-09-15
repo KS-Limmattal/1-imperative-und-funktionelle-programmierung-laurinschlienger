@@ -15,17 +15,19 @@ public class Loops {
 
         }
 
-}
+    }
     public static void pi(int stellen) {
         int k = 0;
         double pi = 0;
-        for (int i = 0; i <= stellen ; i++){
+        for (int i = 0; i <= 100000000 ; i++ ){
             double Nenner = Math.pow(-1, k);
             double zähler = 2*k + 1;
+            k = k + 1;
             double digits = Nenner / zähler;
             pi = pi + digits;
         }
-        System.err.println(4*pi);
+       double PI = 4 * pi;
+       System.out.println(PI);
     }
     public static void main(String[] args){
         
@@ -34,12 +36,13 @@ public class Loops {
         primfaktor(35);
         primfaktor(326);
         primfaktor(725);
-        primfaktor(-13075);
-        primfaktor(-15);
+        primfaktor(13075);
+        primfaktor(15);
         // TODO: Schreibe mehr Testcode
         System.out.println();
 
         // Test-Code für Teilaufgabe d)
+        pi(4);
         /*System.out.println("Aufgabe d)");
         for (int n = 0; n < 12; n++){
             System.out.println("Pi approximated to " + n + " digits with pi()  is " + pi(n));

@@ -15,6 +15,17 @@ public class Loops {
 
         }
 
+}
+    public static void pi(int stellen) {
+        int k = 0;
+        double pi = 0;
+        for (int i = 0; i <= stellen ; i++){
+            double Nenner = Math.pow(-1, k);
+            double zähler = 2*k + 1;
+            double digits = Nenner / zähler;
+            pi = pi + digits;
+        }
+        System.err.println(4*pi);
     }
     public static void main(String[] args){
         

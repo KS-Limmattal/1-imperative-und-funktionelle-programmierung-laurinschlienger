@@ -1,36 +1,43 @@
+import java.text.DecimalFormat;
+
 public class Loops {
-    
+
     // TODO: Schreibe hier die Methoden für die Teilaufgaben.
     public static void primfaktor(int zahl) {
         System.out.println("Primfaktoren:");
         int faktor = 2;
         while (zahl != 1) {
-        if (zahl % faktor == 0){
-            System.out.print(faktor);
-            System.out.print(",");
-            zahl = zahl / faktor;
-        } else {
-            faktor = faktor + 1;
-        }
+            if (zahl % faktor == 0) {
+                System.out.print(faktor);
+                System.out.print(",");
+                zahl = zahl / faktor;
+            } else {
+                faktor = faktor + 1;
+            }
 
         }
 
     }
+
     public static void pi(int stellen) {
         int k = 0;
         double pi = 0;
-        for (int i = 0; i <= 100000000 ; i++ ){
+        for (int i = 0; i <= 100000000; i++) {
             double Nenner = Math.pow(-1, k);
-            double zähler = 2*k + 1;
+            double zähler = 2 * k + 1;
             k = k + 1;
             double digits = Nenner / zähler;
             pi = pi + digits;
         }
-       double PI = 4 * pi;
-       System.out.println(PI);
+        String str = Integer.toString(stellen);
+        double PI = 4 * pi;
+        String formatted = String.format("%."+str+"f", PI);
+        System.out.println(formatted);
+
     }
-    public static void main(String[] args){
-        
+
+    public static void main(String[] args) {
+
         // Test-Code für Teilaufgabe c)
         primfaktor(100);
         primfaktor(35);
@@ -43,10 +50,15 @@ public class Loops {
 
         // Test-Code für Teilaufgabe d)
         pi(4);
-        /*System.out.println("Aufgabe d)");
-        for (int n = 0; n < 12; n++){
-            System.out.println("Pi approximated to " + n + " digits with pi()  is " + pi(n));
-        }
-        System.out.println(); */
+        pi(2);
+        pi(10);
+        /*
+         * System.out.println("Aufgabe d)");
+         * for (int n = 0; n < 12; n++){
+         * System.out.println("Pi approximated to " + n + " digits with pi()  is " +
+         * pi(n));
+         * }
+         * System.out.println();
+         */
     }
 }
